@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-a11y="true">
+    // its important to include javascript for fontawesome to work
+  </script>
+</head>
+
+<body class="body_wrapper">
+  <div class="header">
+    <img class="header_icon" src="/assets/images/appLogo.png" alt="logo">
+    <div class="header_center">
+      <form class="header_form" action="/" method="post">
+        <input type="text" name="input_field" value=""  required>
+        <button type="submit" name="button"><i class="fas fa-download"></i></button>
+      </form>
+    </div>
+  </div>
+  <div class="main_message">
+    <h2 >{{_mainMessage}}</h2>
+    <div class = "donation">
+      <p>Enjoy my work? consider a donation?</p><a href="https://www.patreon.com/eddieprogramming"> <i class="fas fa-hand-holding-usd"></i></a>
+    </div>
+  </div>
+  <div class="error_message">
+    <h2>{{_errorMessage}}</h2>
+  </div>
+
+</body>
+<div class="footer">
+  <footer>&copy;Copyright <span id= "currentYear"></span> eddieprogramming</footer>
+</div>
+  <script type="text/javascript">
+    var currentYear = new Date().getFullYear();
+    document.getElementById("currentYear").innerHTML = currentYear;
+  </script>
+</html>

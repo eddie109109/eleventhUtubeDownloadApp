@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+
+.body_wrapper {
+  min-height: 600px;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  overflow:hidden;
+  height: 100px;
+}
+
+.header_icon {
+  object-fit: contain;
+  height: 100px;
+  margin-left: 20px;
+  /* flex: 1; */
+}
+
+
+
+.header_center{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: fit-content;
+  padding:10px;
+  height: 50px;
+  border: 1px solid lightgray;
+  border-radius: 99px;
+  margin-left: 10em;
+  margin-top: 20px;
+}
+
+.header_center input {
+  border: none;
+  width: 550px;
+  padding: 10px;
+  outline-width: 0;
+  flex: 1;
+
+}
+
+.header_center button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+.main_message {
+  text-align: center;
+  /* position: relative;
+  top: 200px; */
+  font-family: Helvetica;
+  /* min-height: 600px; */
+  height: 100%;
+  margin: 100px;
+  /* padding: 100px; */
+  color: #D1011D;
+}
+
+.error_message {
+  text-align: center;
+  position: relative;
+  top: 200px;
+  font-family: Helvetica;
+
+}
+
+
+/* the below is to hide the main message when an error message is rendered */
+.hide {
+  display: block;
+}
+
+.hideError {
+  display: block;
+}
+
+.footer {
+  /* text-align: center; */
+  margin-top: 300px;
+  padding: 20px;
+  background-color: #DA2722;
+  color: white;
+
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+
+.donation {
+  padding: 50px;  
+}
+
+
+/* when it is less than 1000px do the following */
+@media screen and (max-width: 1000px) {
+  .header .header_icon{
+    /* flex-direction: column; */
+    /* overflow: visible; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header_center {
+    /* flex-direction: column; */
+    /* text-align: center; */
+    position: absolute;
+    top:200px;
+    left:100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header_center input {
+    /* width: 250px; */
+    /* flex-wrap: wrap; */
+    /* flex: 2; */
+  }
+
+
+  .main_message {
+    position: absolute;
+    top:200px;
+    display: block;
+  }
+
+
+
+
+}
+
+/* when it is less than 700px do the following */
+@media screen and (max-width: 700px) {
+  /* .header {
+
+  } */
+
+  .header_center {
+    /* margin: 10px; */
+    width: 100%;
+  }
+
+  /* when the screen size is less than 700px, deccrease the input width so that the
+  download still be on the same line */
+  .header_center input {
+    width: 350px;
+  }
+
+
+}
