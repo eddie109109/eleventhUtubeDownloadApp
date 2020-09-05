@@ -15,9 +15,9 @@
   <div class="header">
     <img class="header_icon" src="/assets/images/appLogo.png" alt="logo">
     <div class="header_center">
-      <form class="header_form" action="/" method="post">
-        <input type="text" name="input_field" value=""  required>
-        <button type="submit" name="button"><i class="fas fa-download"></i></button>
+      <form class="header_form" id ="header_form"  action="/" method="post">
+        <input id ="header_form_input" type="text" name="input_field" value=""  required>
+        <button onclick= "handleSubmit()" type="submit" name="button"><i class="fas fa-download"></i></button>
       </form>
     </div>
   </div>
@@ -38,5 +38,28 @@
   <script type="text/javascript">
     var currentYear = new Date().getFullYear();
     document.getElementById("currentYear").innerHTML = currentYear;
+
+
+    function handleSubmit() {
+     setTimeout(function(){ document.getElementById("header_form_input").value = ""; }, 0);
+    }
+    // clear userInput once the user clicks the submit button
+
+
+    var ajax = new XMLHttpRequest();
+    ajax.responseType = "blob";
+    ajax.open("GET","archive.zip",true);
+    ajax.send();
+
+    ajax.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var obj = window.URL.createObjectURL(this.response);
+        document.getElementById("anchor").setAttribute("href",obj);
+
+        setTimeout(function() {
+          window.URL.revokeObjectURL(obj);
+        }, 60 * 1000);
+      }
+    };
   </script>
 </html>

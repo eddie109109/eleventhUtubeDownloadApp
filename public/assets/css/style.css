@@ -46,15 +46,24 @@
   padding: 10px;
   outline-width: 0;
   flex: 1;
-
+  background-color: white;
 }
 
 .header_center button {
   border: none;
   background-color: white;
   cursor: pointer;
+  outline-width: 0;
 }
 
+.header_center .fa-download:hover {
+  /* border: none; */
+  background-color: #DA2722;
+  color: white;
+  border-radius: 5px;
+  /* cursor: pointer;
+  outline-width: 0; */
+}
 
 .main_message {
   text-align: center;
@@ -102,7 +111,21 @@
 }
 
 .donation {
-  padding: 50px;  
+  padding: 50px;
+}
+
+.fa-hand-holding-usd {
+  background-color: #70A806;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #70A806;
+}
+
+.test {
+  background-color: green;
+  min-height: 100px;
 }
 
 

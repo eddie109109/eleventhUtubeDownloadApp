@@ -11,8 +11,6 @@ app.use(express.urlencoded({extended:true}));
 app.set("view engine","hbs");
 app.set('views','views'); // make sure express looks for views folder(optional, just to be safe)
 
-
-
 var currentYear = new Date().getFullYear();
 
 
@@ -35,11 +33,7 @@ app.post("/", async (req,res) => {
     }).pipe(res);
 
   } catch(err) {
-    console.log("Err isiss",err);
-    res.render("index", {
-      _mainMessage:"Enter a youtube link above to download, an invalid link will not be accepted",
-      _currentYear: currentYear,
-    });
+    return;
   }
 
 
@@ -59,6 +53,7 @@ app.post("/", async (req,res) => {
 //     res.render("index");
 //   }
 // }
+
 
 
 
